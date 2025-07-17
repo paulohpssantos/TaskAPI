@@ -1,0 +1,68 @@
+  
+
+-- Table: public.tarefa
+
+-- DROP TABLE IF EXISTS public.tarefa;
+
+CREATE TABLE IF NOT EXISTS public.tarefa
+(
+    id bigint NOT NULL DEFAULT nextval('tarefa_id_seq'::regclass),
+    datafim date,
+    datainicio date,
+    nome character varying(255) COLLATE pg_catalog."default",
+    status character varying(255) COLLATE pg_catalog."default",
+    tarefa_principal_id bigint,
+    usuario_responsavel_id bigint NOT NULL,
+    CONSTRAINT tarefa_pkey PRIMARY KEY (id),
+    CONSTRAINT fk87aknmdi8b1d3j43vp1vdm8ry FOREIGN KEY (usuario_responsavel_id)
+        REFERENCES public.usuario (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fkk8lv0gmiioh5n8cy4id1hdmy5 FOREIGN KEY (tarefa_principal_id)
+        REFERENCES public.tarefa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.tarefa
+    OWNER to postgres;
+
+
+
+-- Table: public.usuario
+
+-- DROP TABLE IF EXISTS public.usuario;
+
+CREATE TABLE IF NOT EXISTS public.usuario
+(
+    id bigint NOT NULL DEFAULT nextval('usuario_id_seq'::regclass),
+    nome character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT usuario_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.usuario
+    OWNER to postgres;
+
+
+-- INSERT USUARIOS
+
+INSERT INTO public.usuario (id, nome) VALUES
+  (1, 'João da Silva'),
+  (2, 'Paulo dos Santos'),
+  (3, 'Juca da Silva');
+
+-- INSERT TAREFAS
+
+INSERT INTO public.tarefa (
+  id, datafim, datainicio, nome, status, tarefa_principal_id, usuario_responsavel_id
+) VALUES
+  (1, '2025-07-18', '2025-07-17', 'Criar Base de Dados', 'AGUARDANDO', NULL, 2),
+  (2, '2025-07-22', '2025-07-21', 'Adicionar Dados as tabelas', 'AGUARDANDO', 1, 1),
+  (3, '2025-07-15', '2025-07-08', 'Levantamento dos Requisitos', 'INICIADA', NULL, 3),
+  (4, '2025-07-25', '2025-07-21', 'Desenvolvimento API', 'AGUARDANDO', NULL, 2);
+
+
