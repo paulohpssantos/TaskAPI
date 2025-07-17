@@ -1,0 +1,11 @@
+RestApplication.class
+model/Usuario.class
+service/TarefaService.class
+model/Tarefa.class
+resource/UsuarioResource.class
+util/EStatus.class
+resource/TarefaResource.class
+util/IModel.class
+service/AbstractService.class
+service/UsuarioService.class
+resource/RestApplication.class

@@ -1,0 +1,11 @@
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/RestApplication.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/model/Tarefa.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/model/Usuario.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/resource/RestApplication.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/resource/TarefaResource.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/resource/UsuarioResource.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/service/AbstractService.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/service/TarefaService.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/service/UsuarioService.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/util/EStatus.java
+/Users/paulodossantos/eclipse-workspace/TaskAPI/src/main/java/util/IModel.java
